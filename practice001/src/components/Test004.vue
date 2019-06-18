@@ -2,13 +2,20 @@
     <div>
       <h2>{{title}}</h2>
       <hr>
-      <input type="text" v-model="todo">
-      <button type="button" @click="add()">add</button>
+      <input type="text" v-model="todo" @keydown="add($event)">
 
       <br>
+      <h2>未完成</h2>
       <ul>
-        <li v-for="(item,key) in list">
-          {{item}}
+        <li v-for="(item,key) in list" v-if="!item.checked">
+          <input type="checkbox" v-model="item.checked" :onchange="saveList()"> {{item.title}}
+          <button @click="minus(key)">删除</button>
+        </li>
+      </ul>
+      <h2>已完成</h2>
+      <ul>
+        <li v-for="(item,key) in list" v-if="item.checked">
+          <input type="checkbox" v-model="item.checked" :onchange="saveList()"> {{item.title}}
           <button @click="minus(key)">删除</button>
         </li>
       </ul>
@@ -16,6 +23,7 @@
 </template>
 
 <script>
+    import storage from '../model/storage';
     export default {
       name: "Test004",
       data() {
@@ -26,12 +34,25 @@
         }
       },
       methods: {
-        add() {
-          this.list.push(this.todo);
-          this.todo = '';
+        add(e) {
+          if (e.keyCode === 13) {
+            this.list.push({title: this.todo, checked: false});
+            this.todo = '';
+            storage.set('list',this.list);
+          }
         },
         minus(index) {
           this.list.splice(index,1);
+          storage.set('list',this.list);
+        },
+        saveList(){
+          storage.set('list',this.list);
+        }
+      },
+      mounted() {
+        var list = storage.get('list');
+        if (list) {
+          this.list = list;
         }
       }
     }

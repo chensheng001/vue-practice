@@ -2,7 +2,7 @@
   <div id="app">
     <h1>根节点app</h1>
     <hr>
-    <Test004></Test004>
+    <v-test04></v-test04>
   </div>
 </template>
 
@@ -13,7 +13,9 @@ import Test003 from "./components/Test003";
 import Test004 from "./components/Test004";
 export default {
   name: 'app',
-  components: {Test004, Test003, Test002, Test001}
+  components: {
+    'v-test04': Test004
+  }
 }
 </script>
 
