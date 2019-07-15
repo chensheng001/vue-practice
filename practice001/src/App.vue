@@ -12,11 +12,15 @@ import Test002 from "./components/Test002";
 import Test003 from "./components/Test003";
 import Test004 from "./components/Test004";
 import Home from "./components/Home";
+import VueResource from "./components/VueResource";
+import LifeCircle from "./components/LifeCircle"
 export default {
   name: 'app',
   components: {
     'v-test04': Test004,
-    'v-home': Home
+    'v-home': Home,
+    'v-vue-resource': VueResource,
+    'v-life-circle': LifeCircle
   }
 }
 </script>

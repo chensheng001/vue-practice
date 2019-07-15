@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* css reset*/
+    html, body, div, span, object, iframe, h1, h2,
+    h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn,
+    em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd,
+    ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+    tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption,
+    figure, footer, header, hgroup, menu, nav, section, summary, time, mark,
+    audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      vertical-align: baseline;
+      background: transparent;
+      outline-style: none;
+      font-family: "Microsoft YaHei", "sans-serif";
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+    }
+    body{
+      background: antiquewhite;
+      padding-top: 40px;
+    }
+    .container section h3{
+      line-height: 30px;
+      background: #fff;
+      color: #faae30;
+      padding-left: 10px;
+    }
+    .container section .content {
+      padding: 15px;
+      line-height: 25px;
+    }
+    section .content ul{
+      padding-left: 20px;
+      background: #fff;
+    }
+    section .content ul li {
+      line-height: 25px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section>
+      <h3>footer, header, hgroup, menu, nav, section</h3>
+      <div class="content">
+        mergeMap((response: Receipt) => {
+        if (response.state === this.statusProcessing) {
+        response.request = msg;
+        return this.poll(msg, response);
+        } else if (response.state === this.statusDone) {
+        const reply: APIReply = this.firstItem(JSON.parse(response.result));
+        if (!reply.success) {
+        if (reply.error) {
+        this.msgService.addMessage({type: 'error', msg: reply.error.details || reply.error.description});
+        if (reply.error.code === 'ID.1001') {
+        this.msgService.addMessage({type: 'error', msg: '认证失败'});
+        this.toLogin();
+        }
+        }
+        }
+        return of(reply);
+        }
+        })
+      </div>
+    </section>
+    <section>
+      <h3>footer, header, hgroup, menu, nav, section</h3>
+      <div class="content">
+        <ul>
+          <li>Suitable for bridal or princess in weddings, proms, parties, birthdays and other special occasion.</li>
+          <li>Suitable for bridal or princess in weddings, proms, parties, birthdays and other special occasion.</li>
+          <li>Suitable for bridal or princess in weddings, proms, parties, birthdays and other special occasion.</li>
+          <li>Suitable for bridal or princess in weddings, proms, parties, birthdays and other special occasion.</li>
+          <li>Suitable for bridal or princess in weddings, proms, parties, birthdays and other special occasion.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h3>footer, header, hgroup, menu, nav, section</h3>
+      <div class="content">
+        mergeMap((response: Receipt) => {
+        if (response.state === this.statusProcessing) {
+        response.request = msg;
+        return this.poll(msg, response);
+        } else if (response.state === this.statusDone) {
+        const reply: APIReply = this.firstItem(JSON.parse(response.result));
+        if (!reply.success) {
+        if (reply.error) {
+        this.msgService.addMessage({type: 'error', msg: reply.error.details || reply.error.description});
+        if (reply.error.code === 'ID.1001') {
+        this.msgService.addMessage({type: 'error', msg: '认证失败'});
+        this.toLogin();
+        }
+        }
+        }
+        return of(reply);
+        }
+        })
+      </div>
+    </section>
+  </div>
+</body>
+</html>
