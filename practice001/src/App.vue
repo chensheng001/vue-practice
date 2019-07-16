@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <h1>根节点app</h1>
-    <hr>
-    <v-parent></v-parent>
+    <v-my-router></v-my-router>
   </div>
 </template>
 
@@ -14,7 +12,8 @@ import Test004 from "./components/Test004";
 import Home from "./components/Home";
 import VueResource from "./components/VueResource";
 import LifeCircle from "./components/LifeCircle";
-import Parent from './components/Parent'
+import Parent from './components/Parent';
+import MyRouter from './components/MyRouter'
 export default {
   name: 'app',
   components: {
@@ -22,7 +21,8 @@ export default {
     'v-home': Home,
     'v-vue-resource': VueResource,
     'v-life-circle': LifeCircle,
-    'v-parent': Parent
+    'v-parent': Parent,
+    'v-my-router': MyRouter
   }
 }
 </script>
