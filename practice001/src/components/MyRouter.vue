@@ -4,8 +4,9 @@
         <router-link to="/home">首页</router-link>
         <router-link to="/news">新闻</router-link>
         <router-link to="/account/list">用户</router-link>
+        <router-link to="/mint">mint UI</router-link>
       </div>
-      <button v-on:click="goIndex()">通过js跳转路由</button>
+      <button v-if="false" v-on:click="goIndex()">通过js跳转路由</button>
       <router-view></router-view>
     </div>
 </template>

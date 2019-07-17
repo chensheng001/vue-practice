@@ -17,7 +17,7 @@ audio, video {
   outline-style: none;
   font-family: Helvetica,Arial,PingFangSC-Light,Hiragina Sans GB,WenQuanYi Micro Hei,microsoft yahei ui,microsoft yahei,sans-serif;
   /*-webkit-font-smoothing: antialiased;*/
-  font-size: 62.5%;
+  font-size: 100%;
 }
 
 #app{
@@ -25,4 +25,7 @@ audio, video {
 }
 ul li {
   list-style: none;
+}
+img{
+  max-width: 100%;
 }
