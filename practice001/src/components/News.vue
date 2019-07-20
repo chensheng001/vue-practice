@@ -1,6 +1,6 @@
 <template>
     <div class="news">
-      <h3>{{msg}}</h3>
+      <h3>{{msg}}--{{this.$store.state.count}}</h3>
 
       <ul>
         <li v-for="(item,key) in list">
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+    import store from '../vuex/store';
     export default {
         name: "News",
         data() {
@@ -28,18 +29,25 @@
             list2: ['aaaaa','bbbbbb','cccc']
           }
         },
+        store,
         methods: {
           requestData() {
               var api = 'http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1';
               this.$http.get(api).then((res)=>{
                 this.list = res.body.result;
+                this.$store.commit('setNewsData',res.body.result);
               }, (err)=>{
                 console.log(err)
               })
           }
         },
         mounted() {
-          this.requestData();
+          const list = this.$store.state.newsComponentList;
+          if (list.length) {
+            this.list = list;
+          }else {
+            this.requestData();
+          }
         }
     }
 </script>

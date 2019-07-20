@@ -23,7 +23,11 @@
         <mt-button @click.native="getMore" size="large" plain>测试滚动加载更多</mt-button>
       </div>
 
-      <mt-index-list height="400">
+      <div class="margin">
+        <mt-button @click.native="getElement" size="large">测试element UI</mt-button>
+      </div>
+
+      <mt-index-list>
         <mt-index-section index="A">
           <mt-cell title="Aaron"></mt-cell>
           <mt-cell title="Alden"></mt-cell>
@@ -83,6 +87,9 @@
           },
           getMore() {
             this.$router.push({path: 'infinite'});
+          },
+          getElement() {
+            this.$router.push({path: 'elment'});
           }
         },
         mounted() {
